@@ -50,7 +50,9 @@ const Navper: FC<NavparProps> = () => {
                 }
             </div>
             <Link href={'/'} className='cursor-pointer'>
-             <Image src={logo} alt="logo" width={70} height={70}/>
+             <Image
+             onClick={()=>setActive(0)}
+             src={logo} alt="logo" width={70} height={70}/>
             </Link>
           
 
