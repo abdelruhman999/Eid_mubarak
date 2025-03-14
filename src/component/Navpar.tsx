@@ -14,6 +14,7 @@ interface NavparProps {
 
 const Navper: FC<NavparProps> = () => {
     const [search, setSearch] = useState(false)
+    const [active, setActive] = useState(0)
 
    
     return (
@@ -38,7 +39,10 @@ const Navper: FC<NavparProps> = () => {
                 {
                     Routes.map((el, index) => {
                         return (
-                            <Link key={index} href={el.path}>
+                            <Link
+                            onClick={()=>setActive(index)}
+                            className={`${active === index ? 'text-blue-600' : ''}`}
+                            key={index} href={el.path}>
                               {el.name}
                             </Link>
                         )

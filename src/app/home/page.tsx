@@ -1,4 +1,4 @@
-import Button from "@/component/Button";
+
 import { type FC } from "react";
 
 interface pageProps {
@@ -10,7 +10,7 @@ const page: FC<pageProps> = async () => {
     
   return (
     <div>
-      <Button />
+    
     
     </div>
   );
