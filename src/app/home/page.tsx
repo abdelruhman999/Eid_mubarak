@@ -11,15 +11,7 @@ const page: FC<pageProps> = async () => {
   return (
     <div>
       <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+    
     </div>
   );
 };
