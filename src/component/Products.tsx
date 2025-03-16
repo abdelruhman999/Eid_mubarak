@@ -1,11 +1,35 @@
 import type { FC } from 'react';
+import Cardstyle from './Cardstyle';
 
 interface ProductsProps {}
 
 const Products: FC<ProductsProps> = () => {
     return (
-        <div className='bg-blue-600 w-full p-[50px] text-center text-4xl'>
-        prodct page under devoloper
+        <div className='  flex justify-center gap-[50px] flex-wrap w-full p-[50px] '>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
+        <Cardstyle/>
     </div>
     );
 }

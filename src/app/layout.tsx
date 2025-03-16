@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navpar from "@/component/Navpar";
 import Fotter from "@/component/Fotter";
+import Whatsappicon from "@/component/Whatsappicon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,14 +28,25 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
+
+
+
+
+`}
       > 
-      <div className="flex flex-col items-center justify-between w-full h-screen">
+      <div className="flex flex-col items-center  justify-between  w-full h-screen">
 
        <Navpar path="/" />
         {children}
+        <div className="relative w-full">
         <Fotter/>
+        <div className="absolute bottom-[20px] right-[20px]">
+        <Whatsappicon/>
+        </div>
+        </div>
       </div>
+
     
       
       </body>

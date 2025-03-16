@@ -41,7 +41,7 @@ const Navper: FC<NavparProps> = () => {
                         return (
                             <Link
                             onClick={()=>setActive(index)}
-                            className={`${active === index ? 'text-blue-600' : ''}`}
+                            className={`${active === index ? 'text-blue-600' : ''} hover:text-blue-600`}
                             key={index} href={el.path}>
                               {el.name}
                             </Link>
