@@ -18,7 +18,7 @@ const Navper: FC<NavparProps> = () => {
 
    
     return (
-        <div className=' flex items-center border-b-[0.2px] border-gray-100 justify-between pr-[40px] pl-[40px]  p-2 w-full'>
+        <div className=' bg-white shadow flex items-center border-b-[0.2px] border-gray-100 justify-between pr-[40px] pl-[40px]  p-2 w-full'>
             <div className='flex items-center text-xl gap-4 cursor-pointer'>
                 <div className='relative'>
                 <FaCartShopping/>

@@ -1,12 +1,14 @@
 import type { FC } from 'react';
+import Loadercom from '@/component/Loadercom';
 
 interface collectionProps {}
 
 const Collection: FC<collectionProps> = () => {
     return (
-        <div className='bg-blue-600 w-full p-[50px] text-center text-4xl'>
-        Collection page under devoloper
-    </div>
+      
+       
+        <Loadercom/>
+  
     );
 }
 

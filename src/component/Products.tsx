@@ -1,11 +1,11 @@
 import type { FC } from 'react';
-import Cardstyle from './Cardstyle';
+import Cardstyle from './CardStyle/Cardstyle';
 
 interface ProductsProps {}
 
 const Products: FC<ProductsProps> = () => {
     return (
-        <div className='  flex justify-center gap-[50px] flex-wrap w-full p-[50px] '>
+        <div className='flex justify-center gap-[50px] flex-wrap w-full p-[50px] '>
         <Cardstyle/>
         <Cardstyle/>
         <Cardstyle/>

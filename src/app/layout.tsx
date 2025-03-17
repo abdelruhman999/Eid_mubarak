@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navpar from "@/component/Navpar";
-import Fotter from "@/component/Fotter";
+import Navpar from "@/component/Navbar";
+import Fotter from "@/component/Footer";
 import Whatsappicon from "@/component/Whatsappicon";
+import Scrollbutton from "@/component/Buttonscroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
-
-
-
+        className={`${geistSans.variable} ${geistMono.variable}  antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
 
 `}
       > 
-      <div className="flex flex-col items-center  justify-between  w-full h-screen">
+      <div className="flex flex-col  relative items-center  justify-between  w-full ">
 
        <Navpar path="/" />
         {children}
@@ -44,6 +42,9 @@ export default function RootLayout({
         <div className="absolute bottom-[20px] right-[20px]">
         <Whatsappicon/>
         </div>
+        </div>
+        <div className="absolute  bottom-[300px] right-[20px]">
+        <Scrollbutton/>
         </div>
       </div>
 

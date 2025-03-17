@@ -1,9 +1,9 @@
 import Loadercom from '@/component/Loadercom';
 import type { FC } from 'react';
 
-interface LoaderProps {}
+interface LoadingProps {}
 
-const Loader: FC<LoaderProps> = () => {
+const Loading: FC<LoadingProps> = () => {
     return (
        
         <Loadercom/>
@@ -11,4 +11,4 @@ const Loader: FC<LoaderProps> = () => {
     );
 }
 
-export default Loader;
+export default Loading;
