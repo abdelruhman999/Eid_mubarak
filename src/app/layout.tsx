@@ -5,6 +5,7 @@ import Navpar from "@/component/Navbar";
 import Fotter from "@/component/Footer";
 import Whatsappicon from "@/component/Whatsappicon";
 import Scrollbutton from "@/component/Buttonscroll";
+import Providers from "@/component/Providers"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,29 +28,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
-
-`}
-      > 
-      <div className="flex flex-col  relative items-center  justify-between  w-full ">
-
-       <Navpar path="/" />
-        {children}
-        <div className="relative w-full">
-        <Fotter/>
-        <div className="absolute bottom-[20px] right-[20px]">
-        <Whatsappicon/>
-        </div>
-        </div>
-        <div className="absolute  bottom-[300px] right-[20px]">
-        <Scrollbutton/>
-        </div>
-      </div>
-
-    
-      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100`}
+      >
+        <Providers>
+          <div className="flex flex-col relative items-center justify-between w-full">
+            <Navpar path="/" />
+            {children}                
+            <div className="relative w-full">
+              <Fotter />
+              <div className="absolute bottom-[20px] right-[20px]">
+                <Whatsappicon />
+              </div>
+            </div>
+            <div className="absolute bottom-[300px] right-[20px]">
+              <Scrollbutton />
+            </div>
+          </div>
+        </Providers>
       </body>
     </html>
   );
