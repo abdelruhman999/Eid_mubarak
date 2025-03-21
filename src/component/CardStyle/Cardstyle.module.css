@@ -1,6 +1,6 @@
 .card {
-    width: 190px;
-    height: 254px;
+    width: 192px;
+    height: 290px;
     background: #f5f5f5;
     padding: 15px;
     border-radius: 10px;
@@ -19,12 +19,7 @@
   }
   .card-image {
     width: 100%;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5em;
-    font-weight: 900;
+    height: 190px;
     transition: all 0.3s;
   }
   .content {
