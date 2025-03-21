@@ -3,22 +3,24 @@ import Link from "next/link";
 import { useState, type FC } from "react";
 import style from "./Cardstyle.module.css";
 import Image from "next/image";
-import logo from "../../../assets/p_img13.png";
+// import logo from "../../../assets/p_img13.png";
+import { Color } from "@/types/product";
 
 interface CardstyleProps {
   image: string;
   name: string;
   id: number;
+  colors: Color[] ;
 }
 
-const Cardstyle: FC<CardstyleProps> = ({ props }: any) => {
+const Cardstyle: FC<CardstyleProps> = ({image , name , id , colors}: CardstyleProps) => {
 
-  const [img , setImg] = useState(props.image)
+  const [img , setImg] = useState(image)
   return (
     <div className={style.card}>
       <div className={style.wrapper}>
         <div>
-          {props.image && (
+          {image && (
             <Image
               className={style["card-image"]}
               src={img}
@@ -29,17 +31,17 @@ const Cardstyle: FC<CardstyleProps> = ({ props }: any) => {
           )}
         </div>
         <div className={style["content"]}>
-          <p className={style["title"]}>{props.name}</p>
+          <p className={style["title"]}>{name}</p>
         </div>
 
         <div className="flex gap-2">
 
-          {props.colors.map((el: any, index: number) => {
+          {colors.map((el, index: number) => {
             return (       
               <div
                 onClick={()=>{
-                const element =  props.colors.find((element:any)=> el.image == element.image) 
-                setImg(element.image)   
+                // const element =  props.colors.find((element:any)=> el.image == element.image) 
+                setImg(el.image)   
               }}
                key={index}
                className="size-[30px] p-[2px]
@@ -61,7 +63,7 @@ const Cardstyle: FC<CardstyleProps> = ({ props }: any) => {
 
               <div
               onClick={()=>{
-              setImg(props.image)   
+              setImg(image)   
             }}
              className="size-[30px] p-[12px]
              flex justify-center
@@ -75,7 +77,7 @@ const Cardstyle: FC<CardstyleProps> = ({ props }: any) => {
         </div>
 
         <Link
-          href={`/product-details/${props.id}`}
+          href={`/product-details/${id}`}
           className={style["card-btn"]}
         >
           شاهد التفاصيل
