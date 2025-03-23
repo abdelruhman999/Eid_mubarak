@@ -3,43 +3,24 @@ import Link from "next/link";
 import { Suspense, useEffect, useState, type FC } from "react";
 import style from "./Cardstyle.module.css";
 import Image from "next/image";
-import {Color} from "@/types/product";
-import Loaderimg from "../Loaderimg";
-
+import logo from "../../../assets/p_img13.png";
 
 interface CardstyleProps {
   image: string;
   name: string;
   id: number;
-  colors:Color[]
-  el:{
-    sizes:[]
-  }
-  season:string
-
 }
 
-const Cardstyle: FC<CardstyleProps> = ({ image, name, colors , id , el ,season }: CardstyleProps) => {
+const Cardstyle: FC<CardstyleProps> = ({ props }: any) => {
 
-  const [img , setImg] = useState(image)
-  const [min_Cost , setMin_Cost] = useState<number>(0)
-
-
-  useEffect(()=>{
-        const sizes = el.sizes
-        const min_value = Math.min(...sizes.map((el:any)=>el.price))
-        setMin_Cost(min_value)
-  },[])
-
-
+  const [img , setImg] = useState(props.image)
   return (
     <div className={`${style.card} relative`}>
       <div className={style.wrapper}>
         <div>
-        <Suspense  fallback={<Loaderimg/>}>
-          {image &&
-            <Image   
-              className={`${style["card-image"]}  `}
+          {props.image && (
+            <Image
+              className={style["card-image"]}
               src={img}
               alt="logo"
               width={200}
@@ -48,28 +29,19 @@ const Cardstyle: FC<CardstyleProps> = ({ image, name, colors , id , el ,season }
           }
         </Suspense>
         </div>
-      
-    
-        <div className={`${style["content"]}`}>
-          <p className={style["title"]}>{name}</p>   
-          <p className={`${style["title"]} ${style["price"]} ${style["old-price"]}`}>&nbsp;LE6</p>
-          <p className={`${style["title"]} ${style["price"]}`}>LE{min_Cost?min_Cost : ''}</p>
-          <p></p>
+        <div className={style["content"]}>
+          <p className={style["title"]}>{props.name}</p>
         </div>
         
 
         <div className="flex gap-2">
 
-          {colors.map((el , index: number) => {
+          {props.colors.map((el: any, index: number) => {
             return (       
               <div
-                onMouseEnter={()=>{
-                const element =  colors.find((element)=> el.image == element.image)    
-                // console.log(element);
-                   
-                  if(element){
-                    setImg(element.image)
-                  }        
+                onClick={()=>{
+                const element =  props.colors.find((element:any)=> el.image == element.image) 
+                setImg(element.image)   
               }}
                key={index}
                className="size-[30px] p-[2px]
@@ -91,8 +63,8 @@ const Cardstyle: FC<CardstyleProps> = ({ image, name, colors , id , el ,season }
           })}
 
               <div
-              onMouseEnter={()=>{
-              setImg(image)   
+              onClick={()=>{
+              setImg(props.image)   
             }}
              className="size-[30px] p-[12px]
              flex justify-center
