@@ -9,7 +9,7 @@ interface productProps {}
 
 const product: FC<productProps> = () => {
     return (
-        <div className='w-full flex flex-col pt-[50px] items-center gap-[20px]'>
+        <div className='w-full flex flex-col  items-center gap-[20px]'>
             <Carousel/>
              <Products/>
              <Pagination />

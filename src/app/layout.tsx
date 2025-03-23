@@ -33,18 +33,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100`}
       >
         <Providers>
-          <div className="flex flex-col relative items-center justify-between w-full">
+          <div className="flex flex-col  gap-[50px] items-center justify-between w-full">
             <Navpar path="/" />
             {children}                
-            <div className="relative w-full">
+            
               <Fotter />
-              <div className="absolute bottom-[20px] right-[20px]">
+              <div className="fixed bottom-[50px] right-[50px]">
                 <Whatsappicon />
               </div>
-            </div>
-            <div className="absolute bottom-[300px] right-[20px]">
-              <Scrollbutton />
-            </div>
+            
           </div>
         </Providers>
       </body>

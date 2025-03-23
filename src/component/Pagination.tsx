@@ -1,55 +1,52 @@
-'use client';
-import { increment, decrement } from "../redux/slices/counterSlice";
-import type { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+'use client'
+import { sendRequest } from '@/api';
+import { Pagination as result } from '@/types/base';
+import { Product } from '@/types/product';
+import { useEffect, useState, type FC } from 'react';
+
 
 interface PaginationProps {}
 
 const Pagination: FC<PaginationProps> = () => {
-    const count = useSelector((state: any) => state.counter.value);
-    const dispatch = useDispatch();
+    const [page , setPage] = useState<number>(1)
+    const [show , setShow] = useState<string | null>(null)
+    useEffect(()=>{
+        sendRequest<result<Product>>({
+            url:'/api/products',
+            method:'GET',
+            params:{
+                page:String(page),
+            }
+        }).then((res)=>{
+            console.log(res);
+            setShow(res.next);
+            console.log(res.next);  
+        }).catch((err)=>{
+            console.log(err);
+        })
+      console.log(page);
+    },[page])
+   
     return (
-            <div>
+     
+            <>
+                {
+                 show &&
+                        <div
+                        onClick={()=>{
+                            setPage(page+1)
+                        }}
+                        className='text-sm cursor-pointer font-semibold 
+                        border-2 border-black p-[10px] text-gray-700
+                        hover:text-white duration-200 hover:bg-gray-900'>   
+                        اظهار الكل
+                        </div>
+                }
+            </>
+           
 
-            <nav aria-label="Page navigation example">
-            <ul className="inline-flex -space-x-px text-base h-10">
-                <li>
-                <button
-                 onClick={() => dispatch(decrement())}
-                 className="flex items-center
-                  justify-center px-4
-                  h-10 ms-0 leading-tight
-                  text-gray-500 bg-white
-                   border border-e-0
-                   border-gray-300 rounded-s-lg
-                   hover:bg-gray-100 hover:text-gray-700
-                    dark:bg-gray-800 dark:border-gray-700
-                     dark:text-gray-400 dark:hover:bg-gray-700
-                      dark:hover:text-white">
-                        Previous
-                        </button>
-                </li>
-               
-                <li>
-                <button
-                onClick={() => dispatch(increment())}
-                 className="flex items-center
-                 justify-center px-4 h-10
-                 leading-tight text-gray-500
-                 bg-white border border-gray-300
-                 rounded-e-lg hover:bg-gray-100 hover:text-gray-700
-                  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
-                   dark:hover:bg-gray-700 dark:hover:text-white
-                   ">
-                    Next
-                   </button>
-                </li>
-            </ul>
-            </nav>
-
-             <h1>القيمة الحالية: {count}</h1>
-            
-            </div>
+          
+        
 
      
     );

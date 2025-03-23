@@ -64,5 +64,6 @@ export interface Product {
     colors: Color[];
     sizes: Size[];
     season: Season;
+    results:[]
     product_size_colors: ProductSizeColor[];
 }

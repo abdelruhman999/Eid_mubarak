@@ -1,1 +1,1 @@
-export const Base_Url = 'https://heshammoawad120.pythonanywhere.com/';
+export const Base_Url = 'https://heshammoawad120.pythonanywhere.com';

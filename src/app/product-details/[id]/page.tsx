@@ -1,12 +1,226 @@
-import type { FC } from 'react';
+"use client"
+import Image from 'next/image';
+import { useEffect ,useState,type FC } from 'react';
+import useRequest from '../../../hooks/call'
+import { useParams } from 'next/navigation';
+import { Base_Url } from '@/calls/constant';
+import { Product } from '@/types/product';
+import style from "../../../component/CardStyle/Cardstyle.module.css";
+import Loadercom from '@/component/Loadercom';
+
 
 interface ProdcutdetailsProps {}
 
+
+
 const Prodcutdetails: FC<ProdcutdetailsProps> = () => {
+ 
+  const [price , setPrice] = useState(0)
+  const [current_img , setCurrent_img] = useState('')
+
+  const params = useParams()
+
+    const [active,setactive]=useState(0)
+     
+      function activeele(index:number){
+        
+          setactive(index)
+      }
+
+  const {data} = useRequest<Product>({
+    url: `/api/product-details/${params.id}`,
+    method: "GET",
+    
+   });
+
+   
+   useEffect(()=>{
+     if(data){
+      setCurrent_img(data.image)
+      const element = data.sizes.find((_,i) => i === active)
+      if(element){
+        setPrice(element.price)
+      }
+        console.log( data);
+      }
+    },[data])
+
+
     return (
-        <div className='bg-blue-600 w-full p-[50px] text-center text-4xl'>
-        Prodcutdetails page under devoloper
+      <>
+       {
+        data ?
+        <div className='flex
+        justify-center items-center
+        xs:items-center 
+        xs:flex-col rounded-2xl
+         gap-[50px]  h-[650px]
+         xs:gap-[20px]
+         bg-white w-[90%]'>
+          <div className='flex
+          gap-[15px]  flex-row-reverse'>
+          <div className='relative '>
+        <Image
+        src={`${Base_Url}/${current_img}`} 
+        className='w-[491px]
+         xs:w-[350px] 
+         xs:h-[400px]
+         h-[567px]'
+          alt='logo'
+          width={400}
+          height={400}
+         />
+          <div className="bg-black absolute 
+       w-[55px] h-[65px] 
+       rounded-br-full
+        top-0 left-0  flex items-center justify-center ">
+           <p className="text-white pb-2  rotate-[-38deg]">
+            {data.season.name}
+           </p>
+      </div>
+  
+          </div>
+          <div className='flex justify-end items-start h-fit w-[150px] flex-wrap gap-[10px]'>
+                 <Image
+                  onMouseEnter={()=>{
+                    setCurrent_img(data.image)
+                  }
+                 }
+                    src={`${Base_Url}/${data.image}`}
+                    className={`h-[100px] w-[70px] hover:scale-80 duration-200 xs:size-[75px] cursor-pointer `}
+                    alt='logo'
+                    width={200} 
+                    height={200}
+                    />
+
+            {
+              data.product_size_colors.map((el,index)=>{
+                return(
+                  <Image
+                   onMouseEnter={()=>{
+                     setCurrent_img(el.color.image)
+                     console.log(index);
+                     const element = data.sizes.find((_,i) => i === index)
+                     console.log(element);   
+                   }
+                  }
+                  key={el.id}
+                    src={`${Base_Url}/${el.color.image}`}
+                    className={`h-[100px] w-[70px] hover:scale-80 duration-200 xs:size-[75px] cursor-pointer `}
+                    alt='logo'
+                    width={200} 
+                    height={200}
+                    />
+
+                )
+              })
+            }
+
+          </div>
+
+          </div>
+
+        <div className='flex
+        gap-[50px] flex-col'>
+
+        <div className='flex
+         flex-col 
+         gap-[10px]
+         xs:gap-[0]
+         xs:items-center
+         
+         '>
+
+          <div className='flex w-[300px] justify-between items-center'>
+          <p className='font-semibold
+          text-wrap  xs:w-[350px]
+           text-2xl'>{data.name}
+           </p>
+           <p className={style["tag"]}>-50%</p>
+          </div>
+       
        </div>
+       
+       <div className='flex
+       xs:items-center
+        flex-col
+        xs:gap-[15px]
+        gap-[10px]'>
+        <p className='text-3xl font-bold'>LE {price}</p>
+        <p className='text-wrap xs:text-center
+         w-[380px] xs:w-[350px]
+        text-sm font-semibold text-gray-400'>
+          {data.description}
+        </p>
+       </div>
+
+        <div className='flex flex-col
+        xs:gap-[15px]
+        gap-[10px]'>
+          <p className='text-xl xs:text-2xl'>Select Size</p>
+
+      <div className='flex gap-2'>
+
+       { 
+        
+        data.sizes.map((el,index)=>{
+          return(
+        <div 
+        key={el.id}
+        onClick={()=>
+         {
+          const element = data.sizes.find((_,i) => i === index)
+          if(element){
+            setPrice(element.price)
+          }
+          activeele(index)
+         }
+        }
+        className={`text-xl 
+        border-black border
+        bg-gray-200 text-center
+        font-serif
+          w-[60px] cursor-pointer
+          ${active===index?'border-red-600':''}
+          p-[10px]`}>
+            {el.size}
+        </div>
+          )
+
+        })
+        
+        }
+      </div>  
+
+        </div>
+
+        <div className='flex flex-col gap-[30px]'>
+        <button
+        className='bg-black text-white
+        text-center w-[150px] p-[12px]'>
+          ADD TO CART
+        </button>
+
+        <div className='bg-gray-300
+         h-[1px]'></div>
+         
+        <p className='text-wrap 
+        font-serif
+        text-sm
+         w-[330px]
+        text-gray-500 
+          '>
+          100% Original product.Cash on delivery is available on this product.Easy return and exchange policy within 7 days.
+        </p>
+        </div>
+
+        </div>
+       
+     
+      </div>
+        : <Loadercom/>
+        }
+      </>
     );
 }
 
