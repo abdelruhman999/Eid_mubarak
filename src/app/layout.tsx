@@ -30,7 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased
+         bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
+
+         `}
       >
         <Providers>
           <div className="flex flex-col  gap-[50px] items-center justify-between w-full">

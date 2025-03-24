@@ -1,21 +1,22 @@
 'use client'
 import { sendRequest } from '@/api';
 import { Pagination as result } from '@/types/base';
-import { Product } from '@/types/product';
+import { HomeProduct } from '@/types/product';
 import { useEffect, useState, type FC } from 'react';
 
 
 interface PaginationProps {}
 
 const Pagination: FC<PaginationProps> = () => {
-    const [page , setPage] = useState<number>(1)
+    const [page , setPage] = useState<number>(2)
     const [show , setShow] = useState<string | null>(null)
+
     useEffect(()=>{
-        sendRequest<result<Product>>({
+        sendRequest<result<HomeProduct>>({
             url:'/api/products',
             method:'GET',
             params:{
-                page:String(page),
+                page:String(page),   
             }
         }).then((res)=>{
             console.log(res);

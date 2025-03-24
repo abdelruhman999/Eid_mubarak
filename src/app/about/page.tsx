@@ -1,3 +1,4 @@
+import Load_search from '@/component/Load_search';
 import Loaderimg from '@/component/Loaderimg';
 import type { FC } from 'react';
 
@@ -7,7 +8,7 @@ const Aboutus: FC<AboutusProps> = () => {
     return (
     
 
-          <Loaderimg/>
+        <Load_search/>
     
     
     );

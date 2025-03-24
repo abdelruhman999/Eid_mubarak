@@ -13,7 +13,6 @@ interface NavparProps {
 
 
 const Navper: FC<NavparProps> = () => {
-    const [search, setSearch] = useState(false)
     const [active, setActive] = useState(0)
 
    
@@ -24,15 +23,13 @@ const Navper: FC<NavparProps> = () => {
                 <FaCartShopping/>
                 <div className='size-[16px] rounded-full bg-blue-600 flex items-center text-white text-xs justify-center absolute left-[-7px] top-[-10px]'>0</div>
                 </div>
-                <div className='relative  flex items-center gap-2'>
-                    <input
-                    placeholder='بحث'
-                     type="search"
-                      className={` text-end duration-200 ${search? 'w-[190px] bg-gray-200' :'w-0 '} text-sm  outline-none rounded-xl h-[35px] pl-[26px]`} />
-                <FaSearch
-                onClick={()=>setSearch(!search)}
-                className='absolute left-1'/>
-                </div>
+               
+                  <Link
+                  href={'/search'}
+                  > 
+                <FaSearch/>
+                  </Link>
+              
 
             </div>
             <div className='flex items-center pt-[20px] flex-row-reverse font-semibold text-gray-500 gap-[20px]'>
