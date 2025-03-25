@@ -45,7 +45,7 @@ const Cards: FC<CardsProps> = () => {
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
-      <div className='flex max-sm:flex-col justify-center gap-[50px] w-full'>
+      <div className='flex max-sm:flex-col items-center justify-center gap-[50px] w-full'>
       <div
         id="card1"
         className='relative  w-[40%] max-sm:w-[90%] cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
