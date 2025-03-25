@@ -45,7 +45,7 @@ const Text: FC<TextProps> = ({
     <p 
       className={`
         text-2xl font-bold text-white 
-        text-center mb-8 mt-4
+        text-center  
         drop-shadow-md 
         max-sm:w-[250px] w-none min-h-[80px]
         flex justify-center items-center

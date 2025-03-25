@@ -38,20 +38,18 @@ export default function RootLayout({
         width: '100%', 
         height: '100%', 
       }}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased
-        felx  flex-col justify-center `}
+        className={`${geistSans.variable} ${geistMono.variable}  antialiased `}
       >
         <Providers>
            <div className="flex flex-col  w-full items-center">
             <Link
-            className="bg-white self-start p-2 rounded-xl m-4"
+            className="  self-end p-2 rounded-xl m-4"
             href='/'>
            
             <Image
             src={logo1}
             alt="logo1"
-           
-            className='size-[50px]'
+            className='size-[70px] p-1 bg-white rounded-xl '
           />
             </Link>              
             {children}  

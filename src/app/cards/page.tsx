@@ -1,13 +1,14 @@
 'use client';
 import { FC } from 'react';
-import logo1 from '../../../assets/7333262_cleanup.jpg';
-import logo2 from '../../../assets/freepik__upload__49630_cleanup.png';
+import logo1 from '../../../assets/Background.png';
+import logo2 from '../../../assets/6SvQd0I - Imgur.png';
 import logo3 from '../../../assets/download-removebg-preview.png';
 import Image from 'next/image';
 import { RootState } from '@/redux/store';
 import { useSelector } from 'react-redux';
 import html2canvas from 'html2canvas'; 
 import Text from '@/component/Text';
+import Link from 'next/link';
 
 interface CardsProps {}
 
@@ -38,66 +39,81 @@ const Cards: FC<CardsProps> = () => {
   };
 
   return (
-    <div className='flex h-screen flex-col justify-center items-center gap-[20px] '>
+    <div className='flex w-full  h-auto flex-col justify-center items-center gap-[10px] '>
       
      <Text 
         text="  🌙 اختر كارت التهنئة الذي تريد تحميله" 
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
-      <div className='flex max-sm:flex-col items-center justify-center gap-[50px] w-full'>
+      <div className='flex max-sm:flex-col   items-center justify-center gap-[50px] w-full'>
+      <Link 
+      href={'chooseimgone'}
+      className=' max-sm:w-[90%]'
+      >
       <div
         id="card1"
-        className='relative  w-[40%] max-sm:w-[90%] cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+        className='relative    cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
         onClick={() => handleDownload('card1')}
         style={{ color: '#b45309' }} 
       >
         <Image
           src={logo1}
           alt="logo1"
-          className='object-cover rounded-2xl'
+          className='object-cover size-[400px] rounded-2xl'
         />
          <Image
           src={logo3}
           alt="logo1"
           width={60}
           height={100}
-          className='absolute right-[190px]
-           max-sm:right-[120px] max-sm:bottom-11
-             max-sm:w-[35px] bottom-[20%]'
+          className='absolute bottom-2 left-5'
         />
-       <p className='absolute right-[50px] max-sm:text-xs
-        max-sm:w-[115px] max-sm:top-[35%] top-[40%] max-sm:right-[28px] text-center w-[200px] font-semibold text-lg'>
-      🌙 عيد فطر سعيد، {text} نهنئك بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال
-      </p>
+        <div className='absolute inset-0 flex flex-col items-center justify-center'>
+        <div className="eid-card">
+        <span className="moon">🌙</span> عيد فطر سعيد، نهنئك بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال
+      </div>
+      <p className='eid-card moon'>{text}</p>
+     </div>
 
       </div>
+      </Link>
 
+      
+      <Link 
+      href={'chooseimgtwo'}
+      className='max-sm:w-[90%]'
+      >
       <div
-        id="card2"
-        className='relative w-[40%] max-sm:w-[90%] transform cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
-        onClick={() => handleDownload('card2')}
-        style={{ color: '#a1a1aa' }} 
+        id="card1"
+        className='relative   cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+        onClick={() => handleDownload('card1')}
+        style={{ color: '#b45309' }} 
       >
         <Image
           src={logo2}
-          alt="logo2"
-          className='object-cover rounded-2xl'
+          alt="logo1"
+          className='object-cover size-[400px] rounded-2xl'
         />
-        <Image
+         <Image
           src={logo3}
           alt="logo1"
           width={60}
-          height={150}
-          className='absolute right-[280px] 
-           max-sm:w-[35px] max-sm:right-[170px]
-            max-sm:bottom-7  bottom-[20%]'
+          height={100}
+          className='absolute bottom-2 left-5'
         />
-        <p className='absolute right-[50px]  max-sm:w-[130px] max-sm:right-[28px]
-         max-sm:text-xs top-[40%] max-sm:top-[40%]
-         text-center w-[200px] font-semibold text-lg'>
-        🌙 عيد فطر سعيد، {text} نهنئكم بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال        </p>
+        <div className='absolute inset-0 flex flex-col items-center justify-center'>
+        <div className="eid-card">
+        <span className="moon">🌙</span> عيد فطر سعيد، نهنئك بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال
       </div>
+      <p className='eid-card moon'>{text}</p>
+     </div>
+
+      </div>
+     
+      </Link>
+
+    
 
       </div>
     </div>
