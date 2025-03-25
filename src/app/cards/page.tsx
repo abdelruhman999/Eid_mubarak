@@ -38,15 +38,17 @@ const Cards: FC<CardsProps> = () => {
   };
 
   return (
-    <div className='flex h-screen max-sm:flex-col justify-center items-center gap-[20px] '>
+    <div className='flex h-screen flex-col justify-center items-center gap-[20px] '>
+      
      <Text 
         text="  🌙 اختر كارت التهنئة الذي تريد تحميله" 
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
+      <div className='flex justify-center gap-[50px] w-full'>
       <div
         id="card1"
-        className='relative  w-[45%] max-sm:w-[90%] cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+        className='relative  w-[40%] max-sm:w-[90%] cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
         onClick={() => handleDownload('card1')}
         style={{ color: '#b45309' }} 
       >
@@ -58,11 +60,11 @@ const Cards: FC<CardsProps> = () => {
          <Image
           src={logo3}
           alt="logo1"
-          width={150}
-          height={150}
-          className='absolute right-[180px]
+          width={60}
+          height={100}
+          className='absolute right-[190px]
            max-sm:right-[120px] max-sm:bottom-11
-             max-sm:w-[35px] bottom-[7%]'
+             max-sm:w-[35px] bottom-[20%]'
         />
        <p className='absolute right-[50px] max-sm:text-xs
         max-sm:w-[115px] max-sm:top-[35%] top-[40%] max-sm:right-[28px] text-center w-[200px] font-semibold text-lg'>
@@ -73,7 +75,7 @@ const Cards: FC<CardsProps> = () => {
 
       <div
         id="card2"
-        className='relative w-[45%] max-sm:w-[90%] transform cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+        className='relative w-[40%] max-sm:w-[90%] transform cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
         onClick={() => handleDownload('card2')}
         style={{ color: '#a1a1aa' }} 
       >
@@ -85,16 +87,18 @@ const Cards: FC<CardsProps> = () => {
         <Image
           src={logo3}
           alt="logo1"
-          width={150}
+          width={60}
           height={150}
           className='absolute right-[280px] 
            max-sm:w-[35px] max-sm:right-[170px]
-            max-sm:bottom-7  bottom-[1%]'
+            max-sm:bottom-7  bottom-[20%]'
         />
         <p className='absolute right-[50px]  max-sm:w-[130px] max-sm:right-[28px]
          max-sm:text-xs top-[40%] max-sm:top-[40%]
          text-center w-[200px] font-semibold text-lg'>
         🌙 عيد فطر سعيد، {text} نهنئكم بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال        </p>
+      </div>
+
       </div>
     </div>
   );
