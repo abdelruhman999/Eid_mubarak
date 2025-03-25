@@ -35,13 +35,16 @@ export default function RootLayout({
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed', 
         width: '100%', 
-        height: '100%', 
+        height: '100vh', 
+       
       }}
+    
         className={`${geistSans.variable} ${geistMono.variable}  antialiased `}
       >
         <Providers>
-           <div className="flex flex-col  w-full items-center">
+           <div className="flex flex-col h-screen w-full items-center">
             <Link
             className="  self-end p-2 rounded-xl m-4"
             href='/'>

@@ -47,7 +47,7 @@ const Text: FC<TextProps> = ({
         text-2xl font-bold text-white 
         text-center  
         drop-shadow-md 
-        max-sm:w-[250px] w-none min-h-[80px]
+        max-sm:w-[300px] w-none min-h-[80px]
         flex justify-center items-center
         ${className}
       `}

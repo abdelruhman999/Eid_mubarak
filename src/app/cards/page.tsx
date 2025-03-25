@@ -24,9 +24,7 @@ const Cards: FC<CardsProps> = () => {
           useCORS: true,
           allowTaint: true,
           backgroundColor: null,
-          scale: 2, // زيادة الجودة
-          scrollX: 0,
-          scrollY: 0,
+          scale: 2, 
           windowWidth: document.documentElement.offsetWidth,
           windowHeight: document.documentElement.offsetHeight,
           logging: true // لرؤية الأخطاء في الكونسول
@@ -39,7 +37,7 @@ const Cards: FC<CardsProps> = () => {
   };
 
   return (
-    <div className='flex w-full  h-auto flex-col justify-center items-center gap-[10px] '>
+    <div className='flex w-full  flex-col justify-center items-center gap-[10px] '>
       
      <Text 
         text="  🌙 اختر كارت التهنئة الذي تريد تحميله" 
@@ -67,9 +65,9 @@ const Cards: FC<CardsProps> = () => {
           alt="logo1"
           width={60}
           height={100}
-          className='absolute bottom-2 left-5'
+          className='absolute top-2 right-2'
         />
-        <div className='absolute inset-0 flex flex-col items-center justify-center'>
+        <div className='absolute inset-0 pt-[40px] flex flex-col items-center justify-center'>
         <div className="eid-card">
         <span className="moon">🌙</span> عيد فطر سعيد، نهنئك بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال
       </div>
@@ -100,7 +98,7 @@ const Cards: FC<CardsProps> = () => {
           alt="logo1"
           width={60}
           height={100}
-          className='absolute bottom-2 left-5'
+          className='absolute top-2 right-2'
         />
         <div className='absolute inset-0 flex flex-col items-center justify-center'>
         <div className="eid-card">

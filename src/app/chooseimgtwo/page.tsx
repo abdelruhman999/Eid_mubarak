@@ -27,9 +27,9 @@ const Chooseimgone: FC<ChooseimgoneProps> = () => {
                  alt="logo1"
                  width={60}
                  height={100}
-                 className='absolute bottom-2 left-5'
+                 className='absolute top-2 right-2'
                />
-               <div className='absolute inset-0 flex flex-col items-center justify-center'>
+               <div className='absolute inset-0 pt-[40px] flex flex-col items-center justify-center'>
                <div className="eid-card">
                <span className="moon">🌙</span> عيد فطر سعيد، نهنئك بحلول عيد الفطر المبارك تقبل الله منا ومنكم صالح الاعمال
              </div>

@@ -12,7 +12,7 @@ const Chooseimgone: FC<ChooseimgoneProps> = () => {
 
   const { text } = useSelector((state: RootState) => state.text);
     return (
-        <div className=' flex justify-center bg-red-600'>
+        <div className=' flex pt-[30px] justify-center '>
 
         <div
                id="card1"
@@ -29,7 +29,7 @@ const Chooseimgone: FC<ChooseimgoneProps> = () => {
                  alt="logo1"
                  width={60}
                  height={100}
-                 className='absolute bottom-2 left-5'
+                 className='absolute top-2 right-2'
                />
                <div className='absolute inset-0 flex flex-col items-center justify-center'>
                <div className="eid-card">
