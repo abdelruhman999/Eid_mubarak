@@ -1,36 +1,26 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface CountType {
-  count: number;
-  lastrequest: number; 
-  next: string | null; 
+interface textType {
+ 
+  text: string | null; 
 }
-
-const initialState: CountType = {
-    count: 2, 
-    lastrequest: 1,
-    next: null
+const initialState: textType = {
+  text: null
 };
 
-export const countSlice = createSlice({
-  name: "count",
+export const textSlice = createSlice({
+  name: "text",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.count++; 
+    addText: (state) => {
+      state.text = state.text; 
     },
-    incrementRequest: (state) => {
-      state.lastrequest++; 
+      setaddText: (state , action:PayloadAction<string | null>) => {
+      state.text = action.payload;   
     },
-      setNext: (state , action:PayloadAction<string | null>) => {
-      state.next = action.payload;   
-    },
-
-   
-   
   },
 });
 
-export const { increment , incrementRequest ,setNext } = countSlice.actions;
+export const {addText, setaddText } = textSlice.actions;
 
-export default countSlice.reducer;
+export default textSlice.reducer;

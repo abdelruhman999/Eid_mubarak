@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navpar from "@/component/Navbar";
-import Fotter from "@/component/Footer";
-import Whatsappicon from "@/component/Whatsappicon";
-import Scrollbutton from "@/component/Buttonscroll";
 import Providers from "@/component/Providers"; 
+import logo from '../../assets/6220ca7c-2f6c-465b-850f-16fe86b063d3_16x9_1200x676.webp';
+import logo1 from '../../assets/download-removebg-preview.png';
+import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,22 +30,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+      style={{
+        backgroundImage: `url(${logo.src})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        width: '100%', 
+        height: '100%', 
+      }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased
-         bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100
-
-         `}
+        felx  flex-col justify-center `}
       >
         <Providers>
-          <div className="flex flex-col  gap-[50px] items-center justify-between w-full">
-            <Navpar/>
-            {children}                
+           <div className="flex flex-col  w-full items-center">
+            <Link
+            className="bg-white self-start p-2 rounded-xl m-4"
+            href='/'>
+           
+            <Image
+            src={logo1}
+            alt="logo1"
+           
+            className='size-[50px]'
+          />
+            </Link>              
+            {children}  
+
+           </div>
             
-              <Fotter />
-              <div className="fixed bottom-[50px] right-[50px]">
-                <Whatsappicon />
-              </div>
-            
-          </div>
         </Providers>
       </body>
     </html>

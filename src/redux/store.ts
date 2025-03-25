@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dataReducer from './slices/dataSlice';
-import countReducer from './slices/count';
+import { textSlice } from "./slices/count";
+
 export const store = configureStore({
   reducer: {
-    data: dataReducer,
-    count: countReducer,
+    text: textSlice.reducer,
   },
 });
 
