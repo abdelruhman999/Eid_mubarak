@@ -37,7 +37,7 @@ const Cards: FC<CardsProps> = () => {
   };
 
   return (
-    <div className='flex w-full  flex-col justify-center items-center gap-[10px] '>
+    <div className='flex w-full pb-[30px]  flex-col justify-center items-center gap-[10px] '>
       
      <Text 
         text="  🌙 اختر كارت التهنئة الذي تريد تحميله" 
