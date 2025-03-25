@@ -6,18 +6,15 @@ import Link from 'next/link';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import {Routes} from '../../assets/assests'
-interface NavparProps {
-    path: string;
-   
-}
 
 
-const Navper: FC<NavparProps> = () => {
+
+const Navper: FC = () => {
     const [active, setActive] = useState(0)
 
    
     return (
-        <div className=' bg-white shadow flex items-center border-b-[0.2px] border-gray-100 justify-between pr-[40px] pl-[40px]  p-2 w-full'>
+        <nav className=' bg-white sticky top-0 z-40 shadow flex items-center border-b-[0.2px] border-gray-100 justify-between pr-[40px] pl-[40px]  p-2 w-full'>
             <div className='flex items-center text-xl gap-4 cursor-pointer'>
                 <div className='relative'>
                 <FaCartShopping/>
@@ -55,7 +52,7 @@ const Navper: FC<NavparProps> = () => {
 
             
          
-        </div>
+        </nav>
     );
 }
 

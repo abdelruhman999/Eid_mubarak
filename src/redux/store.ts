@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slices/counterSlice";
-
+import dataReducer from './slices/dataSlice';
+import countReducer from './slices/count';
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    data: dataReducer,
+    count: countReducer,
   },
 });
 
-// تعريف RootState و AppDispatch لأنواع TypeScript
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

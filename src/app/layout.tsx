@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <Providers>
           <div className="flex flex-col  gap-[50px] items-center justify-between w-full">
-            <Navpar path="/" />
+            <Navpar/>
             {children}                
             
               <Fotter />

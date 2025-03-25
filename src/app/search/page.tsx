@@ -17,8 +17,8 @@ const Search = () => {
         url: '/api/products-search',
         method: 'GET',
         params: { 
-      
-            search: value,
+            page_size:"100",
+            search: value,   
         }
     }, [value]);
 
@@ -32,7 +32,6 @@ const Search = () => {
     useEffect(() => {
         if (data) {
             console.log(data);
-            
             setProducts(data);
         }
     }, [data]);
