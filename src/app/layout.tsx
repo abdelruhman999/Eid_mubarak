@@ -6,6 +6,7 @@ import logo from '../../assets/6220ca7c-2f6c-465b-850f-16fe86b063d3_16x9_1200x67
 import logo1 from '../../assets/download-removebg-preview.png';
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body
       style={{
         backgroundImage: `url(${logo.src})`,
