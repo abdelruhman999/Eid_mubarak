@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/component/Providers"; 
 import logo from '../../assets/6220ca7c-2f6c-465b-850f-16fe86b063d3_16x9_1200x676.webp';
-import logo1 from '../../assets/download-removebg-preview.png';
+import logo1 from '../../assets/download-removebg-preview.jpg';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";

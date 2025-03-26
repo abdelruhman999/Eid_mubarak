@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useRef } from 'react';
 import logo1 from '../../../assets/Background.jpg';
-import logo3 from '../../../assets/download-removebg-preview.png';
+import logo3 from '../../../assets/download-removebg-preview.jpg';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Text from '@/component/Text';

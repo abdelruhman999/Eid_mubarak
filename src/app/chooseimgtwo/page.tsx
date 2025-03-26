@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useRef } from 'react';
 import logo2 from '../../../assets/6SvQd0I - Imgur.jpg';
-import logo3 from '../../../assets/download-removebg-preview.png';
+import logo3 from '../../../assets/download-removebg-preview.jpg';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Text from '@/component/Text';
@@ -60,9 +60,9 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
         alt="logo"
         width={60}
         height={100}
-        className="absolute top-2 right-2 z-10"
+        className="absolute top-2 rounded-lg  right-2 z-10"
       />
-      <div className="absolute inset-0 flex flex-col pb-[30px] items-center justify-end z-10">
+      <div className="absolute inset-0 flex flex-col  items-center justify-end z-10">
         <p className="eid-card moon z-20">{text}</p>
       </div>
     </div>

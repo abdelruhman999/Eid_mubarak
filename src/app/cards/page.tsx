@@ -2,11 +2,10 @@
 import { FC } from 'react';
 import logo1 from '../../../assets/Background.jpg';
 import logo2 from '../../../assets/6SvQd0I - Imgur.jpg';
-import logo3 from '../../../assets/download-removebg-preview.png';
+import logo3 from '../../../assets/download-removebg-preview.jpg';
 import Image from 'next/image';
 import { RootState } from '@/redux/store';
 import { useSelector } from 'react-redux';
-import html2canvas from 'html2canvas'; 
 import Text from '@/component/Text';
 import Link from 'next/link';
 
@@ -46,7 +45,7 @@ const Cards: FC<CardsProps> = () => {
           alt="logo1"
           width={60}
           height={100}
-          className='absolute top-2 right-2'
+          className='absolute top-2 rounded-lg  right-2'
         />
         <div className='absolute inset-0  pb-[30px] flex flex-col items-center justify-end'>
        
@@ -76,9 +75,9 @@ const Cards: FC<CardsProps> = () => {
           alt="logo1"
           width={60}
           height={100}
-          className='absolute top-2 right-2'
+          className='absolute top-2 rounded-lg right-2'
         />
-        <div className='absolute inset-0 pb-[30px] flex flex-col items-center justify-end'>
+        <div className='absolute inset-0 pb-[0px] flex flex-col items-center justify-end'>
        
       <p className='eid-card moon'>{text}</p>
      </div>
