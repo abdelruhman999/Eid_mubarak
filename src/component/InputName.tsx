@@ -13,7 +13,7 @@ const InputName: FC<InputNameProps> = () => {
   const {text} = useSelector((state:RootState) => state.text);
  
     return (
-       <div className=' w-full flex h-screen justify-center pt-[150px]'>
+       <div className=' w-full flex  justify-center pt-[50px]'>
 
         <form
         className="bg-gray-900/50 flex max-sm:w-[90%] w-[440px] h-fit  items-center flex-col  gap-[20px] shadow-lg rounded-2xl p-6  text-center">

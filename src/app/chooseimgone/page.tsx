@@ -6,6 +6,7 @@ import logo1 from '../../../assets/Background.jpg';
 import logo3 from '../../../assets/download-removebg-preview.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
+import Text from '@/component/Text';
 
 interface ChooseimgoneProps {}
 
@@ -38,6 +39,12 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
   };
 
   return (
+    <div className='flex flex-col gap-[20px] items-center'>
+      <Text 
+        text="  🌙 اضغط على كارت التهنئه الخاص بك لتحميله  "  
+        typingSpeed={80} 
+        className="text-amber-100 animate-bounce" 
+      />
     <div 
       ref={cardRef}
       onClick={handleDownload}
@@ -58,6 +65,7 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
       <div className="absolute inset-0 flex flex-col pb-[30px] items-center justify-end z-10">
         <p className="eid-card moon z-20">{text}</p>
       </div>
+    </div>
     </div>
   );
 };
