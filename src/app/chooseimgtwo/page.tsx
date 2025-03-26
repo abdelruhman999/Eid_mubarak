@@ -7,6 +7,7 @@ import logo3 from '../../../assets/download-removebg-preview.jpg';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Text from '@/component/Text';
+import style from '../../component/Cardstyle.module.css'
 
 interface ChooseimgoneProps {}
 
@@ -63,7 +64,7 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
         className="absolute top-2 rounded-lg  right-2 z-10"
       />
       <div className="absolute inset-0 flex flex-col  items-center justify-end z-10">
-        <p className="eid-card moon z-20">{text}</p>
+      <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
       </div>
     </div>
     </div>

@@ -8,7 +8,7 @@ import { RootState } from '@/redux/store';
 import { useSelector } from 'react-redux';
 import Text from '@/component/Text';
 import Link from 'next/link';
-
+import style from '../../component/Cardstyle.module.css'
 interface CardsProps {}
 
 const Cards: FC<CardsProps> = () => {
@@ -49,7 +49,7 @@ const Cards: FC<CardsProps> = () => {
         />
         <div className='absolute inset-0  pb-[30px] flex flex-col items-center justify-end'>
        
-      <p className='eid-card moon'>{text}</p>
+      <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
      </div>
 
       </div>
@@ -79,7 +79,7 @@ const Cards: FC<CardsProps> = () => {
         />
         <div className='absolute inset-0 pb-[0px] flex flex-col items-center justify-end'>
        
-      <p className='eid-card moon'>{text}</p>
+        <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
      </div>
 
       </div>
