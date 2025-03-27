@@ -27,7 +27,7 @@ const Cards: FC<CardsProps> = () => {
       <div className='flex max-sm:flex-col   items-start justify-center gap-[50px] w-full'>
       <Link 
       href={'chooseimgone'}
-      className=' max-sm:w-[90%]'
+      className='w-full flex justify-center'
       >
       <div
         id="card1"
@@ -59,7 +59,7 @@ const Cards: FC<CardsProps> = () => {
       
       <Link 
       href={'chooseimgtwo'}
-      className='max-sm:w-[90%]'
+      className='w-full flex justify-center'
       >
       <div
         id="card1"

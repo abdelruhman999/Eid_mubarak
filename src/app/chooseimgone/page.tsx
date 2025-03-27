@@ -40,7 +40,7 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
   };
 
   return (
-    <div className='flex flex-col gap-[20px] items-center'>
+    <div className='flex flex-col w-full gap-[20px] items-center'>
     
     <div 
       ref={cardRef}

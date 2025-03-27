@@ -39,11 +39,11 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
   };
 
   return (
-    <div >
+    <div className='w-full flex justify-center'>
     <div 
       ref={cardRef}
       onClick={handleDownload}
-      className="relative max-sm:w-[90%]  h-[430px] w-[300px] cursor-pointer"
+      className="relative max-sm:w-[90%] max-sm:h-[470] h-[430px] w-[300px] cursor-pointer"
     >
       <img
         src={logo2.src}
