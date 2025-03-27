@@ -43,7 +43,7 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
     <div 
       ref={cardRef}
       onClick={handleDownload}
-      className="relative max-sm:w-[90%] max-sm:h-[460] bg-red-500 h-[430px] w-[300px] cursor-pointer"
+      className="relative max-sm:w-[90%] max-sm:h-[460]  h-[430px] w-[300px] cursor-pointer"
     >
       <img
         src={logo2.src}
