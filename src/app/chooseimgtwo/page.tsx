@@ -43,7 +43,7 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
     <div 
       ref={cardRef}
       onClick={handleDownload}
-      className="relative max-sm:w-[90%] max-sm:h-[470] h-[430px] w-[300px] cursor-pointer"
+      className="relative max-sm:w-[90%] max-sm:h-[510] h-[430px] w-[300px] cursor-pointer"
     >
       <img
         src={logo2.src}
@@ -58,7 +58,7 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
         className="absolute top-2 rounded-lg  right-2 z-10"
       />
       <div className="absolute inset-0  flex flex-col  items-center justify-end z-10">
-      <p className={`${style.poppins_semibold} text-blue-900 `}>{text}</p>
+      <p className={`${style.poppins_semibold} text-blue-950 `}>{text}</p>
       </div>
     </div>
     </div>

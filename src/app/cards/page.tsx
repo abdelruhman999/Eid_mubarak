@@ -9,88 +9,80 @@ import { useSelector } from 'react-redux';
 import Text from '@/component/Text';
 import Link from 'next/link';
 import style from '../../component/Cardstyle.module.css'
+
 interface CardsProps {}
 
 const Cards: FC<CardsProps> = () => {
   const { text } = useSelector((state: RootState) => state.text);
 
-
- 
   return (
-    <div className='flex w-full pb-[30px]  flex-col justify-center items-center gap-[10px] '>
-      
-     <Text 
-        text="  🌙 اختر كارت التهنئة الذي تريد تحميله" 
+    <div className='flex w-full pb-[30px] flex-col justify-center items-center gap-[50px]'>
+      <Text 
+        text="🌙 اختر كارت التهنئة الذي تريد تحميله" 
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
-      <div className='flex max-sm:flex-col  items-start justify-center gap-[50px] max-sm:w-full'>
-      <Link 
-      href={'chooseimgone'}
-      className='w-full flex justify-center'
-      >
-      <div
-        id="card1"
-        className='relative   cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
- 
-        style={{ color: '#b45309' }} 
-      >
-        <Image
-          src={logo1}
-          alt="logo1"
-          className='object-cover h-[400px]  rounded-2xl'  
-          width={300}
-        />
-         <Image
-          src={logo3}
-          alt="logo1"
-          width={60}
-          height={100}
-          className='absolute top-2 rounded-lg  right-2'
-        />
-        <div className='absolute inset-0  pb-[5px] flex flex-col items-center justify-end'>
-       
-      <p className={`${style.poppins_semibold} text-gray-600`}>{text}</p>
-     </div>
-
-      </div>
-      </Link>
-
       
-      <Link 
-      href={'chooseimgtwo'}
-      className='w-full flex justify-center'
-      >
-      <div
-        id="card1"
-        className='relative   cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
-        style={{ color: '#b45309' }} 
-      >
-        <Image
-          src={logo2}
-          alt="logo1"
-      
-      
-          className='object-cover h-[400px] w-[300px]  rounded-2xl'
-        />
-          <Image
-          src={logo3}
-          alt="logo1"
-          width={60}
-          height={100}
-          className='absolute top-2 rounded-lg  right-2'
-        />
-        <div className='absolute inset-0 pb-[0px] flex flex-col items-center justify-end'>
-       
-        <p className={`${style.poppins_semibold} text-blue-900`}>{text}</p>
-     </div>
+      <div className='flex max-sm:flex-col items-start justify-center gap-[50px] max-sm:w-full'>
+        {/* Card 1 */}
+        <Link href={'chooseimgone'} className='w-full flex justify-center'>
+          <div
+            id="card1"
+            className='relative cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+            style={{ color: '#b45309' }}
+          >
+            <div className='relative h-[400px] w-[300px]'>
+              <Image
+                src={logo1}
+                alt="logo1"
+                fill
+                className='object-cover rounded-2xl'
+              />
+              <Image
+                src={logo3}
+                alt="logo1"
+                width={60}
+                height={60}
+                className='absolute top-2 right-2 rounded-lg'
+              />
+              <div className='absolute bottom-0 left-0 right-0 pb-4 flex justify-center'>
+                <p className={`${style.poppins_semibold} text-gray-600  px-2 py-1 rounded-md`}>
+                  {text}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Link>
 
-      </div>
-     
-      </Link>
-
-    
-
+        {/* Card 2 */}
+        <Link href={'chooseimgtwo'} className='w-full flex justify-center'>
+          <div
+            id="card1"
+            className='relative cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+            style={{ color: '#b45309' }}
+          >
+            <div className='relative h-[400px] w-[300px]'>
+              <Image
+                src={logo2}
+                alt="logo1"
+                fill
+                className='object-cover rounded-2xl'
+              />
+              <Image
+                src={logo3}
+                alt="logo1"
+                width={60}
+                height={60}
+                className='absolute top-2 right-2 rounded-lg'
+              />
+              <div className='absolute bottom-0 left-0 right-0 pb-4 flex justify-center'>
+                <p className={`${style.poppins_semibold} text-blue-950  px-2 py-1 rounded-md`}>
+                  {text}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
