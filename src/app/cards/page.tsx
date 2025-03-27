@@ -24,7 +24,7 @@ const Cards: FC<CardsProps> = () => {
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
-      <div className='flex max-sm:flex-col   items-start justify-center gap-[50px] w-full'>
+      <div className='flex max-sm:flex-col  items-start justify-center gap-[50px] max-sm:w-full'>
       <Link 
       href={'chooseimgone'}
       className='w-full flex justify-center'
