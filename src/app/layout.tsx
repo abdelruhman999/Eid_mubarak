@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/component/Providers"; 
 import logo from '../../assets/6220ca7c-2f6c-465b-850f-16fe86b063d3_16x9_1200x676.webp';
-import logo1 from '../../assets/download-removebg-preview.jpg';
+import logo1 from '../../assets/download-removebg-preview-removebg-preview.png';
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -59,7 +59,7 @@ export default function RootLayout({
             <Image
             src={logo1}
             alt="logo1"
-            className='size-[70px] p-1 bg-white rounded-xl '
+            className='size-[80px] p-1  rounded-xl '
           />
             </Link>              
             {children}  

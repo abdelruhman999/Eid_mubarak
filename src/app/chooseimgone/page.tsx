@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useRef } from 'react';
 import logo1 from '../../../assets/Background.jpg';
-import logo3 from '../../../assets/download-removebg-preview.jpg';
+import logo3 from '../../../assets/download-removebg-preview-removebg-preview.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Text from '@/component/Text';
@@ -41,11 +41,7 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
 
   return (
     <div className='flex flex-col gap-[20px] items-center'>
-      <Text 
-        text="  🌙 اضغط على كارت التهنئه الخاص بك لتحميله  "  
-        typingSpeed={80} 
-        className="text-amber-100 animate-bounce" 
-      />
+    
     <div 
       ref={cardRef}
       onClick={handleDownload}
@@ -64,7 +60,7 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
         className="absolute top-2 right-2 z-10"
       />
       <div className="absolute inset-0 flex flex-col pb-[30px] items-center justify-end z-10">
-      <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
+      <p className={`${style.poppins_semibold} text-gray-600`}>{text}</p>
       </div>
     </div>
     </div>

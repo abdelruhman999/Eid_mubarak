@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import logo1 from '../../../assets/Background.jpg';
 import logo2 from '../../../assets/6SvQd0I - Imgur.jpg';
-import logo3 from '../../../assets/download-removebg-preview.jpg';
+import logo3 from '../../../assets/download-removebg-preview-removebg-preview.png';
 import Image from 'next/image';
 import { RootState } from '@/redux/store';
 import { useSelector } from 'react-redux';
@@ -24,21 +24,22 @@ const Cards: FC<CardsProps> = () => {
         typingSpeed={80} 
         className="text-amber-100 animate-bounce" 
       />
-      <div className='flex max-sm:flex-col   items-center justify-center gap-[50px] w-full'>
+      <div className='flex max-sm:flex-col   items-start justify-center gap-[50px] w-full'>
       <Link 
       href={'chooseimgone'}
       className=' max-sm:w-[90%]'
       >
       <div
         id="card1"
-        className='relative    cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
+        className='relative   cursor-pointer transform transition duration-300 ease-in-out hover:scale-110 hover:opacity-90'
  
         style={{ color: '#b45309' }} 
       >
         <Image
           src={logo1}
           alt="logo1"
-          className='object-cover size-[400px] rounded-2xl'
+          className='object-cover h-[400px]  rounded-2xl'  
+          width={300}
         />
          <Image
           src={logo3}
@@ -47,9 +48,9 @@ const Cards: FC<CardsProps> = () => {
           height={100}
           className='absolute top-2 rounded-lg  right-2'
         />
-        <div className='absolute inset-0  pb-[30px] flex flex-col items-center justify-end'>
+        <div className='absolute inset-0  pb-[5px] flex flex-col items-center justify-end'>
        
-      <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
+      <p className={`${style.poppins_semibold} text-gray-600`}>{text}</p>
      </div>
 
       </div>
@@ -68,18 +69,20 @@ const Cards: FC<CardsProps> = () => {
         <Image
           src={logo2}
           alt="logo1"
-          className='object-cover size-[400px] rounded-2xl'
+      
+      
+          className='object-cover h-[400px] w-[300px]  rounded-2xl'
         />
-         <Image
+          <Image
           src={logo3}
           alt="logo1"
           width={60}
           height={100}
-          className='absolute top-2 rounded-lg right-2'
+          className='absolute top-2 rounded-lg  right-2'
         />
         <div className='absolute inset-0 pb-[0px] flex flex-col items-center justify-end'>
        
-        <p className={`${style.moon} ${style.eid_card}`}>{text}</p>
+        <p className={`${style.poppins_semibold} text-blue-900`}>{text}</p>
      </div>
 
       </div>
