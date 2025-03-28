@@ -41,7 +41,6 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
 
   return (
     <div className='flex flex-col w-full gap-[20px] items-center'>
-    
     <div 
       ref={cardRef}
       onClick={handleDownload}
@@ -59,11 +58,13 @@ const Chooseimgone2: FC<ChooseimgoneProps> = () => {
         height={100}
         className="absolute top-2 right-2 z-10"
       />
-      <div className="absolute inset-0 flex flex-col pb-[30px] items-center justify-end z-10">
-      <p className={`${style.poppins_semibold} text-gray-600`}>{text}</p>
+      <div className="absolute inset-0 flex flex-col items-center justify-end z-10 pb-6 px-4">
+        <p className={`${style.poppins_semibold} text-gray-600 text-center w-full`}>
+          {text}
+        </p>
       </div>
     </div>
-    </div>
+  </div>
   );
 };
 

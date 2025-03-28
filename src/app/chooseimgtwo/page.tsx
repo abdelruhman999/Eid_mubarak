@@ -40,28 +40,30 @@ const Chooseimgone1: FC<ChooseimgoneProps> = () => {
 
   return (
     <div className='w-full flex justify-center'>
-    <div 
-      ref={cardRef}
-      onClick={handleDownload}
-      className="relative max-sm:w-[90%] max-sm:h-[540]  h-[430px] w-[300px] cursor-pointer"
-    >
-      <img
-        src={logo2.src}
-        alt="background"
-        className="absolute  object-cover rounded-2xl"
-      />
-      <Image
-        src={logo3}
-        alt="logo"
-        width={60}
-        height={100}
-        className="absolute top-2 rounded-lg  right-2 z-10"
-      />
-      <div className="absolute inset-0  flex flex-col  items-center justify-end z-10">
-      <p className={`${style.poppins_semibold} text-blue-950 `}>{text}</p>
-      </div>
+  <div 
+    ref={cardRef}
+    onClick={handleDownload}
+    className="relative max-sm:w-[90%] max-sm:h-[540px] h-[430px] w-[300px] cursor-pointer"
+  >
+    <img
+      src={logo2.src}
+      alt="background"
+      className="absolute w-full h-full object-cover rounded-2xl"
+    />
+    <Image
+      src={logo3}
+      alt="logo"
+      width={60}
+      height={100}
+      className="absolute top-2 rounded-lg right-2 z-10"
+    />
+    <div className="absolute inset-0 flex flex-col items-center justify-end z-10 pb-4">
+      <p className={`${style.poppins_semibold} text-blue-950 text-center px-4`}>
+        {text}
+      </p>
     </div>
-    </div>
+  </div>
+</div>
   );
 };
 
